@@ -1,10 +1,16 @@
-const router = require('express').Router();
+const express = require('express');
+const router = express.Router();
+
 const {
   userLoginService,
   userSignupService,
   getUserDetailsService,
   editUserDetailsService,
+  createUserDetailService,
+  getUserCardDetailService,
 } = require('../service/user.service');
+
+const upload = require('../server');
 
 // @route    POST api/user/login
 // @desc     User Loginin
