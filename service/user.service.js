@@ -30,22 +30,22 @@ const editUserDetailsService = (req, res) => {
 const createUserDetailService = (req, res) => {
   try {
     const userInfo = req.body;
-    // const newUser = pool.query(
-    //   ' INSERT INTO user_profile \
-    //     (firstname, lastname, company, jobrole, university, program_of_study, email, calendlylink, image) \
-    //     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)',
-    //   [
-    //     userInfo.firstname,
-    //     userInfo.lastname,
-    //     userInfo.company,
-    //     userInfo.jobrole,
-    //     userInfo.university,
-    //     userInfo.program_of_study,
-    //     userInfo.email,
-    //     userInfo.calendlylink,
-    //     `http://localhost:6000/${req.file.path}`,
-    //   ]
-    // );
+    const newUser = pool.query(
+      ' INSERT INTO user_profile \
+        (firstname, lastname, company, jobrole, university, program_of_study, email, calendlylink, image) \
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)',
+      [
+        userInfo.firstname,
+        userInfo.lastname,
+        userInfo.company,
+        userInfo.jobrole,
+        userInfo.university,
+        userInfo.program_of_study,
+        userInfo.email,
+        userInfo.calendlylink,
+        req.file.path,
+      ]
+    );
   } catch (e) {
     console.log(e);
   }

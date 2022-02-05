@@ -10,6 +10,10 @@ const multer = require('multer');
 
 // const logger = require('./logger');
 
+// CORS
+const cors = require('cors');
+app.use(cors());
+
 app.use(express.json());
 app.use('/api/user', userRoute);
 app.use('/user/profile', userProfileRoute);
