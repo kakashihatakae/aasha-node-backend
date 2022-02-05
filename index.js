@@ -61,17 +61,4 @@ app.get('/user', async (req, res) => {
   }
 });
 
-/*
 
-create table user_profile( id SERIAL PRIMARY KEY, 
-  firstname varchar(255) not null, 
-  lastname varchar(255) not null, 
-  company varchar(100), 
-  jobrole varchar(100), 
-  university varchar(255), 
-  program_of_study varchar(255), 
-  email VARCHAR ( 255 ) UNIQUE NOT NULL,  
-  calendlylink text,
-  image text);
-
-*/
