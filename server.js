@@ -5,6 +5,11 @@ const authGoogle = require('./auth/auth.google');
 const app = express();
 // const logger = require('./logger');
 
+// CORS
+const cors = require('cors');
+app.use(cors());
+
+app.use(express.json());
 app.use('/api/user', userRoute);
 app.use('/auth/linkedin', authLinkedin);
 app.use('/auth/google', authGoogle);
